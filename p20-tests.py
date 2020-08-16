@@ -7,12 +7,29 @@ Created on Sun Aug 16 12:20:22 2020
 
 import unittest
 
+from digit_sum import DigitSum
 
 
-class TestTriangleMaximum(unittest.TestCase):  
+class TestDigitSumClass(unittest.TestCase):  
+    
+    def setUp(self):
+        self.DS = DigitSum()
         
-    def test_something(self):
-        self.assertEqual(1, 1)
+    def test_get_last_digit(self):     
+        
+        result = self.DS.get_last_digit(372)              
+        self.assertEqual(result, (2,37))
+        
+        result = self.DS.get_last_digit(370)              
+        self.assertEqual(result, (0,37))
+        
+        result = self.DS.get_last_digit(894356)              
+        self.assertEqual(result, (6,89435))
+        
+        
+    def test_get_digit_sum(self):
+        result = self.DS.get_digit_sum(3628800)
+        self.assertEqual(result, 27)
         
 
 
